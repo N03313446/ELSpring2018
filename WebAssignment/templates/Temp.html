@@ -1,0 +1,40 @@
+<!doctype html>
+   <head>
+      <title>Read Temps</title>
+   </head>
+
+   <body>
+      <p> This is where Temperature data will be displayed!</p>
+
+      <br><br><br><br><br><br><br><br>
+
+      <form action="http://localhost:300" method="post">
+
+	 <label for="upperDate"> Enter Upper Date </label>
+         <input type="date" name="upperDate" size="25" id="upperDate"> 				<!--Add one-line text box-->
+
+         <br><br><br>
+
+	 <label for="lowerDate"> Enter Lower Date </label>
+         <input type="date" name="lowerDate" size="25" id="lowerDate">
+
+         <input type="submit"> 
+
+      </form>
+   <p>{{ upperDate }}</p>
+   <br>
+   <p>{{ lowerDate }}</p>
+   <br>
+
+   <table>
+      <tbody>
+         {% for row in data %}
+	    <tr>
+	       <td>{{ row }}</td>
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   </body>
+
+</html>

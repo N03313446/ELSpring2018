@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function printContent(el){
+    var restorepage = document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printcontent;
+    window.print();
+    document.body.innerHTML = restorepage;
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('temps');
+    db.serialize(function(){
+      db.run("CREATE TABLE temp(id INT, dt TEXT)");
+      var stmt = db.pr epare("INSERT into user values(?,?)");
+      for(var i=0 ; i< 10 ; i++){
+          var d=new Date();
+          var n=d.toLocateTimeString();
+      }
+      stmt.finalize();
+      db.each("SELECT id,dt from user", function(err,row)){
+      console.log("User id: " + row.id, row.dt);
+    })
+    db.close();
+    })
+    }
+</script>
+</head>
+ 
+<body>
+<h1>   My Page	</h1>
+
+<div id="div1"> DIV 1 content... </div>
+<button onclick="printContent('div1')">Print Content </button>
+
+<div id="div2"> DIV 2 content... </div>
+<button onclick="printContent('div2')">Print Content </button>
+
+<p id="p1"> Paragraph 1 content...</p>
+<button onclick="printContent('p1')">Print Content </button>
+
+</body>
+</html>
