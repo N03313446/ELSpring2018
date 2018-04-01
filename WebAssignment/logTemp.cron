@@ -1,2 +1,2 @@
-0,15,30,45 * * * *  /usr/bin/bin/python /home/pi/ELSpring2018/WebAssignment/ReadTemp.py
+0,15,30,45 * * * *  python /home/pi/ELSpring2018/WebAssignment/ReadTemp.py
 

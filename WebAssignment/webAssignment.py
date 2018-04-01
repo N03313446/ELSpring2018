@@ -20,9 +20,9 @@ def PrintData():
          upperDate2 = tempDateUpper.strftime('%m/%d/%Y')
          lowerDate2 = tempDateLower.strftime('%m/%d/%Y')
          
-         conn = sqlite3.connect('/home/pi/ELSpring2018/WebAssignment/temp.db')
+         conn = sqlite3.connect('/home/pi/ELSpring2018/WebAssignment/temperature.db')
          cursor = conn.cursor()
-         cursor.execute('SELECT * FROM temp WHERE date_time BETWEEN ? AND ?', (upperDate2, lowerDate2,))
+         cursor.execute('SELECT * FROM TempData WHERE date_time BETWEEN ? AND ?', (upperDate2, lowerDate2,))
         
      return render_template('Temp.html', data=cursor.fetchall(),upperDate=upperDate, lowerDate=lowerDate)
 
