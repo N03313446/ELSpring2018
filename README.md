@@ -16,6 +16,8 @@ This repository documents my class work and projects done for **CPS342**
 
 # Final Project - Raspberry Pi SQLite Sensors 
 
+### All the code for this project is located under the Final_Project file
+
 Using a breadboard, a raspberry pi 3, DHT22 sensor and a 10kΩ resistor, I was able to create a webserver showing temp/humidity values and store them in a database. The goals of this project were the following:
 
 1. The box will start collecting temperature and humidity data at regular intervals, store locally, and
