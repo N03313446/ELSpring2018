@@ -1,0 +1,1 @@
+*/5 * * * * python /home/pi/ELSpring2018/Final_Project/dht_read.py
