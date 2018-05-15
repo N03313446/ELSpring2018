@@ -16,6 +16,20 @@ This repository documents my class work and projects done for **CPS342**
 
 # Final Project - Raspberry Pi SQLite Sensors 
 
+Using a breadboard, a raspberry pi 3, DHT22 sensor and a 10kΩ resistor, I was able to create a webserver showing temp/humidity values and store them in a database. The goals of this project were the following:
+
+1. The box will start collecting temperature and humidity data at regular intervals, store locally, and
+also upload to a remote site.
+2. A user can log into the remote admin site, and should be able to access the temperature/humidity
+profile of each deployed box.
+3. The user interface of the admin site must be such that it can show the measured parameters in a
+specified time frame that the user can pick.
+4. It must be possible to see the individual data profiles of each box (in a graph), as well as a
+cumulative view (as stacked curves, for example)
+
+I was able to achieve 1, 2, and 4. There was a problem with the database itself as it was locking me out but I was able to collect enough data and display it on a graph. Multiple sensors can be added without any problem since the code is able to check everytime if a new sensor is being added and also determine if it's a DHT22 or a DHT11. Also you can add more boxes manually if needed. Finally for the website, only admin users are able to access it.
+
+In the future it is very easy to implement number 2, and have the user select the date ranges for each box.
 
 
 ## Setup
@@ -96,3 +110,7 @@ on port 5000:
 
 Open a browser and navigate to http://raspberrypi:5000/ (note you might need to
 use the IP address of your pi if your router doesn't resolve the hostname automatically).
+
+## Cloning
+
+By cloning this file and following the instructions above by installing all the necessary componenents you will be able to have a wroking enviroment!
